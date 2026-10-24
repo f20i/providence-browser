@@ -25,9 +25,9 @@ ENV LANG=zh_CN.UTF-8 \
     LC_ALL=zh_CN.UTF-8
 
 # Chrome
-RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
-    apt-get install -y ./google-chrome-stable_current_amd64.deb && \
-    rm google-chrome-stable_current_amd64.deb
+RUN wget -O ./google-chrome.deb https://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_156.0.8078.47-1_amd64.deb && \
+    apt-get install -y ./google-chrome.deb && \
+    rm ./google-chrome.deb
 
 # uv
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh && \
